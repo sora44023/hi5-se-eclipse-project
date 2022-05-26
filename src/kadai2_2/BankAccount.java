@@ -12,7 +12,7 @@ public class BankAccount {
     private void pause() {
         // ランダムの時間 (最大500ms)待つ
         try {
-            Thread.sleep(rnd.nextInt(500));
+            Thread.sleep(rnd.nextInt(10));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
