@@ -20,7 +20,7 @@ public class MyHelloServer {
 
 				// 接続されたときの処理
 				count++;
-				new Thread(new HelloThread(sock, count));
+				new Thread(new HelloThread(sock, count)).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
