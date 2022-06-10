@@ -7,11 +7,11 @@ public class PersonThread implements Runnable {
 	private static char tname = 'A';
 	private int speed;
 	private Notebook nb;
-	private Random rand = new Random();
 
 	PersonThread(Notebook nb) {
 		this.nb = nb;
-		speed = rand.nextInt(5) + 1;
+		Random r2 = new Random();
+		speed = r2.nextInt(5) + 1;
 		name = String.valueOf(tname);
 		tname++;
 		if (tname > 'Z')

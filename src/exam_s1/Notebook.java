@@ -18,7 +18,7 @@ public class Notebook {
 			}
 		}
 		LocalDateTime now = LocalDateTime.now(); // 現在時刻を取得
-		String date = DateTimeFormatter.ofPattern("HH:mm:ss.SSS").format(now); // 表示する形式を指定
+		String date = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS").format(now); // 表示する形式を指定
 		System.out.println("\n" + name + ": ended at " + date);
 		System.out.println("----------");
 	}
