@@ -23,7 +23,9 @@ public class Lift implements Runnable {
 				int id = PassengerCounter.getNextPassengerId();
 				if (id < 0)
 					break;
-				Main.show("Lift" + no + ": Welcome Passenger No." + id, (no - 1) * SHIFT_WIDTH);
+				for(int i=0; i<4; i++) {
+					Main.show(no,id,i);
+				}
 				Thread.sleep(delay * 100);
 			}
 		} catch (InterruptedException e) {
