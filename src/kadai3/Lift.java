@@ -35,7 +35,7 @@ public class Lift implements Runnable {
 	}
 
 	private void goDownstairs(int id) {
-		s = s.replace("[" + String.format("%2d", id) + "]", "[  ]");	// リフトの中身を視覚的に空に
+		s = s.replace("[" + String.format("%2d", id) + "]", "[  ]"); // リフトの中身を視覚的に空に
 		for (int i = 1; i <= FLOOR; i++) {
 			print("Lift" + no + ": " + s.substring(i * 5, s.length()));
 		}
