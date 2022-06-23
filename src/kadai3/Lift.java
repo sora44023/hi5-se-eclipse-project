@@ -30,7 +30,7 @@ public class Lift implements Runnable {
 		String s = "[" + String.format("%2d", id) + "]";
 	}
 
-	private void goDownstairs(int id, int floor) {
+	private void goDownstairs(int id) {
 		String s = "[  ]";
 		for (int i = 0; i <= floor; i++) {
 			print("Lift" + no + ": " + s);
@@ -46,7 +46,7 @@ public class Lift implements Runnable {
 			if (id < 0)
 				break;
 			print("Lift" + no + ": Welcome Passenger No." + id);
-			goUpstairs(id, floor);
+			goUpstairs(id);
 		}
 	}
 }
