@@ -6,6 +6,7 @@ public class Lift implements Runnable {
 
 	private static int seqNo = 1; // 通し番号
 	private int no = 0; // リフト番号
+	private int floor = 4;
 
 	final static int SHIFT_WIDTH = 32; // 出力の際の空白の幅
 
@@ -16,27 +17,36 @@ public class Lift implements Runnable {
 		seqNo++;
 	}
 
-	@Override
-	public void run() {
+	private void print(String s) {
 		try {
-			while (true) {
-				int id = PassengerCounter.getNextPassengerId();
-				if (id < 0)
-					break;
-				Main.show("Lift" + no + ": Welcome Passenger No." + id, (no - 1) * SHIFT_WIDTH);
-				String s = "[" + String.format("%2d", id) + "]";
-				for (int i = 0; i < 5; i++) {
-					Main.show("Lift" + no + ": " + s, (no - 1) * SHIFT_WIDTH);
-					s = "----|" + s;
-				}
-				Main.show("Passenger " + id + ": Thanks!", (no - 1) * SHIFT_WIDTH);
-				for (int i = 0; i < 5; i++) {
-					Main.show("Lift" + no + ": " + s, (no - 1) * SHIFT_WIDTH);
-				}
-				Thread.sleep(delay * 100);
-			}
+			Main.show(s, (no - 1) * SHIFT_WIDTH);
+			Thread.sleep(delay * 100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void goUpstairs(int id, int floor) {
+		String s = "[" + String.format("%2d", id) + "]";
+	}
+
+	private void goDownstairs(int id, int floor) {
+		String s = "[  ]";
+		for (int i = 0; i <= floor; i++) {
+			print("Lift" + no + ": " + s);
+			s = "----|" + s;
+		}
+		print("Passenger " + id + ": Thanks!");
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			int id = PassengerCounter.getNextPassengerId();
+			if (id < 0)
+				break;
+			print("Lift" + no + ": Welcome Passenger No." + id);
+			goUpstairs(id, floor);
 		}
 	}
 }
