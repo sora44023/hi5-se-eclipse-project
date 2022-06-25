@@ -27,6 +27,7 @@ public class Lift implements Runnable {
 	private void move(int id) {
 		String n = String.format("%2d", id);
 		s = "[" + n + "]";
+		
 		// 上の階へ
 		print("Lift" + no + ": Welcome Passenger No." + id);
 		for (int i = 0; i < FLOOR; i++) {
