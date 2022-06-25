@@ -24,22 +24,22 @@ public class Lift implements Runnable {
 		}
 	}
 
-	private void goUpstairs(int id) {
-		s = "[" + String.format("%2d", id) + "]";
+	private void move(int id) {
+		String n = String.format("%2d", id);
+		s = "[" + n + "]";
+		// 上の階へ
 		print("Lift" + no + ": Welcome Passenger No." + id);
 		for (int i = 0; i < FLOOR; i++) {
 			print("Lift" + no + ": " + s);
 			s = "----|" + s;
 		}
 		print("Passenger " + id + ": Thanks!");
-	}
-
-	private void goDownstairs(int id) {
-		s = s.replace("[" + String.format("%2d", id) + "]", "[  ]"); // リフトの中身を視覚的に空に
+		
+		// 下の階へ
+		s = s.replace("[" + n + "]", "[  ]"); // リフトの中身を視覚的に空に
 		for (int i = 1; i <= FLOOR; i++) {
 			print("Lift" + no + ": " + s.substring(i * 5, s.length()));
 		}
-
 	}
 
 	@Override
@@ -48,8 +48,7 @@ public class Lift implements Runnable {
 			int id = PassengerCounter.getNextPassengerId();
 			if (id < 0)
 				break;
-			goUpstairs(id);
-			goDownstairs(id);
+			move(id);
 		}
 		print("Lift" + no + " has stopped.");
 	}
