@@ -23,7 +23,7 @@ public class NengoUtilTest {
 	}
 
 	@Test
-	public void isHeiseiYearに1989を与えるとfalseを返す() {
+	public void isHeiseiYearに1989を与えるとtrueを返す() {
 		assertThat(nu.isHeiseiYear(1989), is(true));
 	}
 
