@@ -41,6 +41,11 @@ public class RectangleTest {
 	}
 
 	@Test
+	public void checkOverlapにrがthisの下の辺に重なるOVERLAPを返す() {
+		assertThat(r.checkOverlap(new Rectangle(5,7,2,2)), is(OverlapState.OVERLAP));
+	}
+	
+	@Test
 	public void checkOverlapにrがthisの外側の右斜め上にあるときOUTを返す() {
 		assertThat(r.checkOverlap(new Rectangle(1,1,1,1)), is(OverlapState.OUT));
 	}

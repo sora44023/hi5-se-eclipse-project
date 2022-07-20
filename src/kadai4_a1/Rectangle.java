@@ -16,7 +16,7 @@ public class Rectangle {
 
 	OverlapState checkOverlap(Rectangle r) {
 		// 実装せよ
-		if (top < r.top && left < r.left && r.width < width - (r.left - left) && r.height < height - (r.top - top))
+		if (top < r.top && left < r.left && r.width < width - (r.left - left) && r.height < height - (r.top - top)) // 内側
 			return OverlapState.IN;
 		if (top > r.top && r.height < top - r.top) // 自分よりも上の外側
 			return OverlapState.OUT;
