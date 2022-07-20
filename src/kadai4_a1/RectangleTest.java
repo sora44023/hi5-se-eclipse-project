@@ -16,13 +16,18 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void checkOverlapにrとthisが同じ大きさの長方形を与えるとOVERLAPを返す() {
+	public void checkOverlapにrがthisより小さいときINを返す() {
+		assertThat(r.checkOverlap(new Rectangle(5,5,2,2)), is(OverlapState.IN));
+	}
+	
+	@Test
+	public void checkOverlapにrとthisが同じ大きさであるときOVERLAPを返す() {
 		assertThat(r.checkOverlap(new Rectangle(4,4,4,4)), is(OverlapState.OVERLAP));
 	}
 	
 	@Test
-	public void checkOverlapにrがthisより小さい長方形を与えるとINを返す() {
-		assertThat(r.checkOverlap(new Rectangle(5,5,2,2)), is(OverlapState.IN));
+	public void checkOverlapにrがthisの外側にあるときOUTを返す() {
+		assertThat(r.checkOverlap(new Rectangle(5,1,2,2)), is(OverlapState.OUT));
 	}
 	
 	@Test
@@ -46,7 +51,22 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void checkOverlapにrがthisの外側の右斜め上にあるときOUTを返す() {
-		assertThat(r.checkOverlap(new Rectangle(1,1,1,1)), is(OverlapState.OUT));
+	public void checkOverlapにrがthisの左外側にあるときOUTを返す() {
+		assertThat(r.checkOverlap(new Rectangle(1,1,10,2)), is(OverlapState.OUT));
+	}
+	
+	@Test
+	public void checkOverlapにrがthisの右外側にあるときOUTを返す() {
+		assertThat(r.checkOverlap(new Rectangle(9,2,2,10)), is(OverlapState.OUT));
+	}
+	
+	@Test
+	public void checkOverlapにrがthisの上外側にあるときOUTを返す() {
+		assertThat(r.checkOverlap(new Rectangle(1,2,10,2)), is(OverlapState.OUT));
+	}
+	
+	@Test
+	public void checkOverlapにrがthisの下外側にあるときOUTを返す() {
+		assertThat(r.checkOverlap(new Rectangle(3,5,10,10)), is(OverlapState.OUT));
 	}
 }
