@@ -61,12 +61,12 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void checkOverlapにrがthisの上外側にあるときOUTを返す() {
+	public void rがthisの上外側にあるときOUTを返す() {
 		assertThat(r.checkOverlap(new Rectangle(1,2,10,2)), is(OverlapState.OUT));
 	}
 	
 	@Test
-	public void checkOverlapにrがthisの下外側にあるときOUTを返す() {
+	public void rがthisの下外側にあるときOUTを返す() {
 		assertThat(r.checkOverlap(new Rectangle(3,5,10,10)), is(OverlapState.OUT));
 	}
 }
