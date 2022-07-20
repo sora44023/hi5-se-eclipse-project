@@ -31,22 +31,22 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void rがthisの右の辺に重なるとOVERLAPを返す() {
+	public void rがthisの右の辺に重なるときOVERLAPを返す() {
 		assertThat(r.checkOverlap(new Rectangle(5,5,3,3)), is(OverlapState.OVERLAP));
 	}
 	
 	@Test
-	public void rがthisの左の辺に重なるOVERLAPを返す() {
+	public void rがthisの左の辺に重なるときOVERLAPを返す() {
 		assertThat(r.checkOverlap(new Rectangle(3,3,2,2)), is(OverlapState.OVERLAP));
 	}
 	
 	@Test
-	public void rがthisの上の辺に重なるOVERLAPを返す() {
+	public void rがthisの上の辺に重なるときOVERLAPを返す() {
 		assertThat(r.checkOverlap(new Rectangle(5,3,2,2)), is(OverlapState.OVERLAP));
 	}
 
 	@Test
-	public void rがthisの下の辺に重なるOVERLAPを返す() {
+	public void rがthisの下の辺に重なるときOVERLAPを返す() {
 		assertThat(r.checkOverlap(new Rectangle(5,7,2,2)), is(OverlapState.OVERLAP));
 	}
 	
