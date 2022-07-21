@@ -24,6 +24,11 @@ public class QuadEquationTest {
 	}
 
 	@Test
+	public void getSolutionに1とマイナス5と0を与えるとREALを返す() {
+		assertThat(qe.getSolution(1, -5, 0), is(QuadEquation.SolutionType.REAL));
+	}
+
+	@Test
 	public void getSolutionに1と1と1を与えるとCOMPLEXを返す() {
 		assertThat(qe.getSolution(1, 1, 1), is(QuadEquation.SolutionType.COMPLEX));
 	}
@@ -34,18 +39,18 @@ public class QuadEquationTest {
 	}
 
 	@Test
-	public void getSolutionに1とマイナス5と0を与えるとREALを返す() {
-		assertThat(qe.getSolution(1, -5, 0), is(QuadEquation.SolutionType.REAL));
+	public void getSolutionにと0と2と3を与えるとREALを返す() {
+		assertThat(qe.getSolution(0, 2, 3), is(QuadEquation.SolutionType.LINEAR));
+	}
+
+	@Test
+	public void getSolutionにと0と0と1を与えるとREALを返す() {
+		assertThat(qe.getSolution(0, 0, 1), is(QuadEquation.SolutionType.NONE));
 	}
 
 	@Test
 	public void getSolutionにと0を与えるとREALを返す() {
 		assertThat(qe.getSolution(0, 0, 0), is(QuadEquation.SolutionType.INDEF));
-	}
-	
-	@Test
-	public void getSolutionにと1を与えるとREALを返す() {
-		assertThat(qe.getSolution(-1.34, 2.89, 3.4), is(QuadEquation.SolutionType.NONE));
 	}
 
 }
