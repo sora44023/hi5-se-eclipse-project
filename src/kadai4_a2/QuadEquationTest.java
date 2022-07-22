@@ -34,22 +34,22 @@ public class QuadEquationTest {
 	}
 
 	@Test
-	public void getSolutionに1と2と1を与えるとCOMPLEXを返す() {
+	public void getSolutionに1と2と1を与えるとDOUBLEを返す() {
 		assertThat(qe.getSolution(1, 2, 1), is(QuadEquation.SolutionType.DOUBLE));
 	}
 
 	@Test
-	public void getSolutionにと0と2と3を与えるとREALを返す() {
+	public void getSolutionにと0と2と3を与えるとLINEARを返す() {
 		assertThat(qe.getSolution(0, 2, 3), is(QuadEquation.SolutionType.LINEAR));
 	}
 
 	@Test
-	public void getSolutionにと0と0と1を与えるとREALを返す() {
+	public void getSolutionにと0と0と1を与えるとNONEを返す() {
 		assertThat(qe.getSolution(0, 0, 1), is(QuadEquation.SolutionType.NONE));
 	}
 
 	@Test
-	public void getSolutionにと0を与えるとREALを返す() {
+	public void getSolutionに0と0と0を与えるとINDEFを返す() {
 		assertThat(qe.getSolution(0, 0, 0), is(QuadEquation.SolutionType.INDEF));
 	}
 
