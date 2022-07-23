@@ -7,9 +7,9 @@ import static org.hamcrest.CoreMatchers.*;
 public class PasswordCheckerTest {
     PasswordChecker pc;
     
-    public static void main(String[] args) {
-        org.junit.runner.JUnitCore.main(PasswordCheckerTest.class.getName());
-    }
+//    public static void main(String[] args) {
+//        org.junit.runner.JUnitCore.main(PasswordCheckerTest.class.getName());
+//    }
 
     @Before
     public void setUp() {
