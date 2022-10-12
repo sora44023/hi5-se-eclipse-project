@@ -2,7 +2,7 @@ package kadai5_2;
 
 public class JankenSimulator2 {
 	public static void main(String[] args) {
-		JankenPlayer[] jps = { new ManualPlayer("Bill"), new RandomPlayer("Ben") };
+		JankenPlayer[] jps = { new ManualPlayer("You"), new RandomPlayer("Ben") };
 		int count = 1;
 		do {
 			for (int i = 0; i < 2; i++)
