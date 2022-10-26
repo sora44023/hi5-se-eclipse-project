@@ -1,9 +1,12 @@
 package kadai5_3_a;
 
 public class JankenSimulator {
+	static int count = 1;
 	public static void main(String[] args) {
-		JankenPlayer[] jps = { new RandomPlayer("Bill"), new RandomPlayer("Ben") };
-		int count = 1;
+		JankenPlayer[] jps = new JankenPlayer[2];
+		jps[0] = new RandomPlayer("Bill");
+		jps[1] = new MimicPlayer("Ben", jps[0]);
+		
 		do {
 			for (int i = 0; i < 2; i++)
 				jps[i].setNextHand();

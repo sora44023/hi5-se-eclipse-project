@@ -9,14 +9,12 @@ class MimicPlayer extends JankenPlayer{
 
 	MimicPlayer(String name, JankenPlayer jp) {
 		super(name);
-		// TODO Auto-generated constructor stub
 		this.jp = jp;
 	}
 
 	@Override
 	Hand setNextHand() {
-		// TODO Auto-generated method stub
-		if(jp.hand == null) {
+		if(JankenSimulator.count == 1) {
 			switch (rnd.nextInt(3)) {
 			case 0:
 				hand = Hand.ROCK;
@@ -29,8 +27,9 @@ class MimicPlayer extends JankenPlayer{
 				break;
 			}
 		} else {
-			hand = jp.hand;
+			hand = target_hand;
 		}
+		target_hand = jp.hand;
 		return hand;
 	}
 	
