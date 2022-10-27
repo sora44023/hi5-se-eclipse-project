@@ -2,7 +2,7 @@ package kadai5_3_a;
 
 import java.util.Random;
 
-class MimicPlayer extends JankenPlayer{
+class MimicPlayer extends JankenPlayer {
 	JankenPlayer jp;
 	Hand target_hand;
 	Random rnd = new Random();
@@ -14,7 +14,7 @@ class MimicPlayer extends JankenPlayer{
 
 	@Override
 	Hand setNextHand() {
-		if(JankenSimulator.count == 1) {
+		if (JankenSimulator.count == 1) {
 			switch (rnd.nextInt(3)) {
 			case 0:
 				hand = Hand.ROCK;
@@ -32,5 +32,5 @@ class MimicPlayer extends JankenPlayer{
 		target_hand = jp.hand;
 		return hand;
 	}
-	
+
 }
