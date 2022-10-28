@@ -5,6 +5,7 @@ import java.util.Random;
 class MimicPlayer extends JankenPlayer {
 	JankenPlayer jp;
 	Hand target_hand;
+	int count = 1;
 	Random rnd = new Random();
 
 	MimicPlayer(String name, JankenPlayer jp) {
@@ -14,7 +15,7 @@ class MimicPlayer extends JankenPlayer {
 
 	@Override
 	Hand setNextHand() {
-		if (JankenSimulator.count == 1) {
+		if (count == 1) {
 			switch (rnd.nextInt(3)) {
 			case 0:
 				hand = Hand.ROCK;
@@ -30,6 +31,7 @@ class MimicPlayer extends JankenPlayer {
 			hand = target_hand;
 		}
 		target_hand = jp.hand;
+		count++;
 		return hand;
 	}
 
