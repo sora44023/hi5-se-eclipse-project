@@ -1,14 +1,17 @@
 package kadai6;
 
-class ComputerPlayer extends Player {	
+import java.util.Random;
+
+class ComputerPlayer extends Player {
+	
+	Random rnd = new Random();
+	
 	ComputerPlayer(String name) {
 		super(name);
-	}	
-    // 必要なメソッドの実装
+	}
 
 	@Override
 	int takeStones(int stoneCount) {
-		// TODO Auto-generated method stub
-		return 0;
+		return stoneCount - (rnd.nextInt(3) + 1);
 	}
 }

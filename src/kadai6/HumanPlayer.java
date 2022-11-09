@@ -1,6 +1,11 @@
 package kadai6;
 
-class HumanPlayer extends Player {	
+import java.util.Scanner;
+
+class HumanPlayer extends Player {
+	
+	Scanner in = new Scanner(System.in);
+	
 	HumanPlayer(String name) {
 		super(name);
 	}	
@@ -8,7 +13,10 @@ class HumanPlayer extends Player {
 
 	@Override
 	int takeStones(int stoneCount) {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("Enter values in the range 1 to 3");
+	    System.out.print("input: ");
+	    // TODO 範囲外の入力に対して再入力させる
+		int n = in.nextInt();
+		return stoneCount - n;
 	}
 }
