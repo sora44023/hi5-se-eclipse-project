@@ -3,7 +3,6 @@ package implexam_s3;
 public class RotatableRectangle extends RotatableShape{
 	private int height;
 	private int width;
-	private int temp;
 	
 	RotatableRectangle(int height, int width){
 		this.height = height;
@@ -22,7 +21,7 @@ public class RotatableRectangle extends RotatableShape{
 
 	@Override
 	void rotate() {
-		temp = width;
+		int temp = width;
 		width = height;
 		height = temp;
 	}
