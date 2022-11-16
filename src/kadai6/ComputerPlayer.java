@@ -12,6 +12,9 @@ class ComputerPlayer extends Player {
 
 	@Override
 	int takeStones(int stoneCount) {
-		return stoneCount - (rnd.nextInt(3) + 1);
+		if(stoneCount < 3)
+			return stoneCount - (rnd.nextInt(1) + 1);
+		else
+			return stoneCount - (rnd.nextInt(3) + 1);
 	}
 }

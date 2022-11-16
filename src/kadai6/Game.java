@@ -14,19 +14,24 @@ public class Game {
 
 	void printStone() {
 		System.out.print("stone: ");
-		for(int i=0; i<stoneCount; i++)
+		for (int i = 0; i < stoneCount; i++)
 			System.out.print("@");
-		System.out.println("[" + stoneCount + "]");
+		System.out.println("[" + stoneCount + "]\n");
 	}
-	
+
 	void start() {
 		System.out.println("[Game No." + getGameCount() + "]");
+		printStone();
+		int winnerNum;
 		do {
-			for (int i = 0; i < 1; i++) {
-				stoneCount = players[i].takeStones(stoneCount);
-				System.out.println(players[i].toString() + "took");
+			for (int i = 0; i < 2; i++) {
+				int ts = players[i].takeStones(stoneCount);
+				System.out.println(players[i].toString() + " took " + (stoneCount - ts) + " stone(s).");
+				stoneCount = ts;
+				winnerNum = i;
+				printStone();
 			}
-		} while (stoneCount < 1);
+		} while (stoneCount > 0);
 	}
 
 	public static int getGameCount() {
