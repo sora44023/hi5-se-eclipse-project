@@ -22,16 +22,19 @@ public class Game {
 	void start() {
 		System.out.println("[Game No." + getGameCount() + "]");
 		printStone();
-		int winnerNum;
+		int winnerNum = 0;
 		do {
 			for (int i = 0; i < 2; i++) {
 				int ts = players[i].takeStones(stoneCount);
+				if(ts < 0)
+					break;
 				System.out.println(players[i].toString() + " took " + (stoneCount - ts) + " stone(s).");
 				stoneCount = ts;
 				winnerNum = i;
 				printStone();
 			}
 		} while (stoneCount > 0);
+		System.out.println(players[winnerNum] + " wins!");
 	}
 
 	public static int getGameCount() {
