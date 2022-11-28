@@ -1,4 +1,4 @@
-package implexam_s3;
+package implexam3_prac;
 
 public class RotatableRectangle extends RotatableShape{
 	private int height;

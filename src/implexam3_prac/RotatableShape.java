@@ -1,4 +1,4 @@
-package implexam_s3;
+package implexam3_prac;
 
 abstract class RotatableShape {
 	abstract void draw();   // 描画する

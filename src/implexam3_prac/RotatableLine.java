@@ -1,4 +1,4 @@
-package implexam_s3;
+package implexam3_prac;
 
 public class RotatableLine extends RotatableShape {
 	private int len;
