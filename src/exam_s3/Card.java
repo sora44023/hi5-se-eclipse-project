@@ -4,11 +4,13 @@ abstract class Card {
 	int nums[]; // ナンバーのデータ
 	public static int NUMLEN = 4; // データの長さ（ナンバーの数）
 	public static int FLAG_HIT = -1; // 当たった状態
+	DigitProvider dp = new DigitProvider();
 
 	Card() {
 		nums = new int[NUMLEN];  // NUMLEN個の配列の実体を生成する
 		for (int i = 0; i < NUMLEN; i++)
-			nums[i] = i + 1;
+//			nums[i] = i + 1;
+			nums[i] = dp.getNext();
 	}
 	void hit(int num) { // 番号numを当たりにする
 		for (int i = 0; i < NUMLEN; i++) 

@@ -12,7 +12,7 @@ public class BoxCard extends Card {
 			if (nums[i] == FLAG_HIT)
 				System.out.print("[*]");
 			else
-				System.out.print("[" + (i + 1) + "]");
+				System.out.print("[" + nums[i] + "]");
 			if (i % 2 == 1)
 				System.out.println();
 		}

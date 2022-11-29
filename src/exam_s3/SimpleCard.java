@@ -11,7 +11,7 @@ public class SimpleCard extends Card {
 			if (nums[i] == FLAG_HIT)
 				System.out.print("[*]");
 			else
-				System.out.print("[" + (i+1) + "]");
+				System.out.print("[" + nums[i] + "]");
 		}
 		System.out.println();
 	}
