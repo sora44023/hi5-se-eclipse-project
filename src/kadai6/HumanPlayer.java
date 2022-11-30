@@ -10,7 +10,6 @@ class HumanPlayer extends Player {
 	HumanPlayer(String name) {
 		super(name);
 	}
-	// 必要なメソッドの実装
 
 	@Override
 	int takeStones(int stoneCount) {
