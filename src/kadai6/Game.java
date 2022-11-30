@@ -20,7 +20,7 @@ public class Game {
 	}
 
 	void start() {
-		System.out.println("[Game No." + getGameCount() + "]");
+		System.out.println("[ Game No." + getGameCount() + " ]");
 		printStone();
 		int winnerNum = 0;
 		do {
@@ -37,7 +37,7 @@ public class Game {
 		System.out.println(players[winnerNum] + " wins!");
 	}
 
-	public static int getGameCount() {
+	public int getGameCount() {
 		return gameCount;
 	}
 }
