@@ -30,10 +30,10 @@ public class PlayStoneGame {
 				g = new Game(new ComputerPlayer("Alice"), new HumanPlayer("You"));
 			else if (n == 2)
 				g = new Game(new ComputerPlayer("Alice"), new ComputerPlayer("Bob"));
-			else if(n == 8) {
+			else if (n == 8) {
 				setMode();
 				continue;
-			}else
+			} else
 				continue;
 			g.start();
 
@@ -43,9 +43,7 @@ public class PlayStoneGame {
 
 	private static void setMode() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	
 
 }
