@@ -18,12 +18,14 @@ public class PlayStoneGame {
 				n = in.nextInt();
 			} catch (InputMismatchException e) {
 				System.out.println("[Error] 数値を入力してください．");
-				continue;
+				in.next();
 			}
-			if (n == 9)
+			if (n == 9) {
+				System.out.println("bye.");
 				break;
+			}
 			if (n == 1)
-				g = new Game(new ComputerPlayer("Alice"), new ComputerPlayer("Bob"));
+				g = new Game(new ComputerPlayer("Alice"), new HumanPlayer("You"));
 			else if (n == 2)
 				g = new Game(new ComputerPlayer("Alice"), new ComputerPlayer("Bob"));
 			else
