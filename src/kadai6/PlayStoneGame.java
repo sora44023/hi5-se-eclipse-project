@@ -5,15 +5,17 @@ import java.util.Scanner;
 
 public class PlayStoneGame {
 	public static void main(String[] args) {
-		Game g;
+		Game g = new Game();
 		int n = 0;
 		Scanner in = new Scanner(System.in);
 		while (true) {
 			System.out.println("<<< Stone Game >>>");
 			System.out.println("[1] 対戦モード (Alice vs You)");
 			System.out.println("[2] 観戦モード (Alice vs Bob)");
+			System.out.println("[8] ゲームの設定");
 			System.out.println("[9] Quit");
 			System.out.print("Select mode: ");
+			g.setStoneChar('*');
 			try {
 				n = in.nextInt();
 			} catch (InputMismatchException e) {
@@ -28,12 +30,22 @@ public class PlayStoneGame {
 				g = new Game(new ComputerPlayer("Alice"), new HumanPlayer("You"));
 			else if (n == 2)
 				g = new Game(new ComputerPlayer("Alice"), new ComputerPlayer("Bob"));
-			else
+			else if(n == 8) {
+				setMode();
+				continue;
+			}else
 				continue;
 			g.start();
 
 		}
 		in.close();
 	}
+
+	private static void setMode() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
