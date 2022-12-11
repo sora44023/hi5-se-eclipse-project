@@ -29,23 +29,24 @@ public class Game {
 	void start() {
 		System.out.println("[ Game No." + getGameCount() + " ]");
 		printStone();
-		int winnerNum = 0;
-		do {
-			for (int i = 0; i < 2; i++) {
-				int ts = players[i].takeStones(stoneCount);
-				if (ts < 0)
-					break;
-				System.out.println(players[i].toString() + " took " + (stoneCount - ts) + " stone(s).");
-				stoneCount = ts;
-				winnerNum = i;
-				printStone();
-				try {
-					Thread.sleep(800);
-				} catch (InterruptedException e) {
-				}
+		int i = 0;
+		while (true) {
+			int nextStone = players[i].takeStones(stoneCount);
+			System.out.println(players[i].toString() + " took " + (stoneCount - nextStone) + " stone(s).");
+			stoneCount = nextStone;
+			printStone();
+			try {
+				Thread.sleep(800);
+			} catch (InterruptedException e) {
 			}
-		} while (stoneCount > 0);
-		System.out.println(players[winnerNum] + " wins!");
+			if (stoneCount <= 0)
+				break;
+			if (i == 0)
+				i = 1;
+			else if (i == 1)
+				i = 0;
+		}
+		System.out.println(players[i] + " wins!");
 	}
 
 	public int getGameCount() {
@@ -56,7 +57,7 @@ public class Game {
 		stoneChar = sc;
 	}
 
-	public void setfirstStone(int fs) {
+	public void setFirstStone(int fs) {
 		firstStone = fs;
 	}
 }

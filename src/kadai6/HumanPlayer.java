@@ -5,14 +5,13 @@ import java.util.Scanner;
 
 class HumanPlayer extends Player {
 
-	Scanner in = new Scanner(System.in);
-
 	HumanPlayer(String name) {
 		super(name);
 	}
 
 	@Override
 	int takeStones(int stoneCount) {
+		Scanner in = new Scanner(System.in);
 		int n = 0;
 		System.out.println("Enter values in the range 1 to 3");
 		while (true) {
@@ -26,7 +25,7 @@ class HumanPlayer extends Player {
 			if (n >= 1 && n <= 3)
 				break;
 		}
-
+		System.out.println();
 		return stoneCount - n;
 	}
 }

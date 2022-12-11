@@ -4,14 +4,13 @@ import java.util.Random;
 
 class ComputerPlayer extends Player {
 
-	Random rnd = new Random();
-
 	ComputerPlayer(String name) {
 		super(name);
 	}
 
 	@Override
 	int takeStones(int stoneCount) {
+		Random rnd = new Random();
 		if (stoneCount < 1)
 			return -1;
 		else if (stoneCount < 3)
