@@ -1,7 +1,7 @@
 package kadai6;
 
 public class Game {
-	private int firstStone = 12;
+	private static int firstStone = 12;
 	private int stoneCount = 0;
 	private Player[] players;
 	private static int gameCount = 0;
@@ -51,6 +51,14 @@ public class Game {
 
 	public int getGameCount() {
 		return gameCount;
+	}
+
+	public char getStoneChar() {
+		return stoneChar;
+	}
+
+	public int getFirstStone() {
+		return firstStone;
 	}
 
 	public void setStoneChar(char sc) {
