@@ -44,12 +44,17 @@ public class PlayStoneGame {
 	}
 
 	private static void setMode(Scanner in, Game g) {
-
-		System.out.printf("石の見た目を設定してください (現在の設定: %c) > ", g.getStoneChar());
+		System.out.print("管理者用パスワードを入力してください．> ");
 		String s = in.next();
+		if(!s.equals("password")) {
+			System.out.println("[Error] パスワードが間違っています．設定モードを終了します．\n");
+			return;
+		}
+		System.out.printf("石の見た目を設定してください (現在の設定: %c) > ", g.getStoneChar());
+		s = in.next();
 		char c = s.charAt(0);
 		g.setStoneChar(c);
-		System.out.printf("石の見た目を %c に設定しました．\n", g.getStoneChar());
+		System.out.printf("\n石の見た目を %c に設定しました．\n", g.getStoneChar());
 		int n = 0;
 		while (true) {
 			System.out.printf("石の数(8,12,16,20)を設定してください (現在の設定: %d) > ", g.getFirstStone());
@@ -57,16 +62,16 @@ public class PlayStoneGame {
 				n = in.nextInt();
 				g.setFirstStone(n);
 			} catch (InputMismatchException e) {
-				System.out.println("[Error] 数値を入力してください．");
+				System.out.println("[Error] 数値を入力してください．\n");
 				in.next();
 			}
 			if (n == 8 || n == 12 || n == 16 || n == 20)
 				break;
-			System.out.println("[Error] 8,12,16,20のいずれかの数値を入力してください．初期値12に戻します．");
+			System.out.println("[Error] 8,12,16,20のいずれかの数値を入力してください．初期値12に戻します．\n");
 			g.setFirstStone(12);
-			break;
+			return;
 		}
-		System.out.printf("石の数を %d に設定しました．\n", g.getFirstStone());
+		System.out.printf("\n石の数を %d に設定しました．\n", g.getFirstStone());
 		try {
 			Thread.sleep(800);
 		} catch (InterruptedException e) {
