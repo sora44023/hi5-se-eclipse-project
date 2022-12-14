@@ -1,1 +1,1 @@
-# HI5-SE-eclipse-project
+# hi5-se-eclipse-project
