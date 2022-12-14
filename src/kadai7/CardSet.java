@@ -1,10 +1,13 @@
 package kadai7;
 
+import java.util.List;
+
 public class CardSet {
-	private Card[] cards;
+	private List<Card> cards;
 
 	CardSet(int maxnum) {
 		// cardsは，1からmaxnumまでの各スートのカードとする
+		
 		cards = new Card[maxnum * 4];
 		int i = 0;
 		for (Card.Suit suit : Card.Suit.values()) {
