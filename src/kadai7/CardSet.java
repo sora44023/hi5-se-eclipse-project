@@ -1,5 +1,7 @@
 package kadai7;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CardSet {
@@ -7,28 +9,30 @@ public class CardSet {
 
 	CardSet(int maxnum) {
 		// cardsは，1からmaxnumまでの各スートのカードとする
-		
-		cards = new Card[maxnum * 4];
-		int i = 0;
+
+		cards = new ArrayList<Card>();
 		for (Card.Suit suit : Card.Suit.values()) {
 			// Suitの種類を変化させながらループする
 			for (int num = 1; num <= maxnum; num++) {
-				cards[i] = new Card(suit, num);
-				i++;
+				cards.add(new Card(suit, num));
 			}
 		}
 	}
 
 	public Card get(int index) {
 		// index番目のカードを得る
-		return cards[index];
+		return cards.get(index);
 	}
 
 	public void display() {
-		// 全カードを表示する（未実装）
+		// 全カードを表示する
+		for (Card c : cards)
+			System.out.print(c.getLook() + " ");
+		System.out.println();
 	}
 
 	public void shuffle() {
-		// シャッフルする（未実装）
+		// シャッフルする
+		Collections.shuffle(cards);
 	}
 }
