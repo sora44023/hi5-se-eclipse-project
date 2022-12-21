@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import kadai7.Card.CardState;
+
 public class CardSet {
 	private List<Card> cards;
 
@@ -34,5 +36,13 @@ public class CardSet {
 	public void shuffle() {
 		// シャッフルする
 		Collections.shuffle(cards);
+	}
+
+	public int getLeftCount() {
+		int cnt = 0;
+		for (Card c : cards)
+			if (c.getState() != CardState.TAKEN)
+				cnt++;
+		return cnt;
 	}
 }
