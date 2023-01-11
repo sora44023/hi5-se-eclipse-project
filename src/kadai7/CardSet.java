@@ -28,8 +28,8 @@ public class CardSet {
 
 	public void display() {
 		// 全カードを表示する
-		for (Card c : cards)
-			System.out.print("[" + c.getLook() + "] ");
+		for (int i = 0; i < cards.size(); i++)
+			System.out.print(i + ":"+ cards.get(i).getLook() + " ");
 		System.out.println();
 	}
 

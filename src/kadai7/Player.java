@@ -11,7 +11,7 @@ abstract class Player {
 	}
 	
 	void successCount() {
-		sc = getSc() + 2;
+		sc = getSc() + 1;
 	}
 	
 	public int getSc() {

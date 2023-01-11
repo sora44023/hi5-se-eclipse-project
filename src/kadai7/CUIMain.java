@@ -8,7 +8,7 @@ public class CUIMain {
 		cs.shuffle();
 		while (cs.getLeftCount() != 0) {
 			System.out.println("残り枚数: " + cs.getLeftCount());
-			System.out.println(p[nowPlayer]+"'s Turn");
+			System.out.println(p[nowPlayer] + "'s turn.");
 			cs.display(); // カード表示
 			int[] tmp = new int[2];
 			tmp = p[nowPlayer].takeCard(cs);
@@ -29,6 +29,8 @@ public class CUIMain {
 
 		cs.display(); // カード表示
 		System.out.println("Done!");
+		for (int i = 0; i < 2; i++)
+			System.out.println(p[i] + ": " + p[i].getSc());
 
 	}
 }
