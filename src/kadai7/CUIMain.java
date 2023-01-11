@@ -11,12 +11,12 @@ public class CUIMain {
 			int[] tmp = new int[2];
 			tmp = p.takeCard(cs);
 			// 数字が同じだった場合
-			if(cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber())
-				for(int i=0; i<2; i++)
+			if (cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber())
+				for (int i = 0; i < 2; i++)
 					cs.get(tmp[i]).take();
 			// 数字が異なる場合
 			else
-				for(int i=0; i<2; i++)
+				for (int i = 0; i < 2; i++)
 					cs.get(tmp[i]).flipDown();
 			System.out.println();
 		}
