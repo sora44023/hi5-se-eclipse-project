@@ -51,9 +51,9 @@ public class Card {
 	public String getLook() {
 		// 状態(state)に応じて，カードの見た目の文字列を返す
 		if (state == CardState.BACK) // 裏向き
-			return "[###]";
+			return "###";
 		else if (state == CardState.TAKEN) // 取られている
-			return " --- ";
+			return "---";
 		else
 			return this.toString();
 	}
@@ -62,6 +62,6 @@ public class Card {
 	public String toString() {
 		char suitid = suit.name().charAt(0); // suitの先頭文字(例えばsuitがSPADEなら'S')を取得する。
 		String spacing = number < 10 ? " " : ""; // suit idとnumber間の空白（三項演算子）
-		return "[" + suitid + spacing + number + "]";
+		return "" + suitid + spacing + number;
 	}
 }

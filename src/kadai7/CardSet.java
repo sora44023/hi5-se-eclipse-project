@@ -29,7 +29,7 @@ public class CardSet {
 	public void display() {
 		// 全カードを表示する
 		for (Card c : cards)
-			System.out.print(c.getLook() + " ");
+			System.out.print("[" + c.getLook() + "] ");
 		System.out.println();
 	}
 
