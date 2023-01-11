@@ -9,11 +9,7 @@ public class CUIMain {
 			System.out.println("残り枚数: " + cs.getLeftCount());
 			cs.display(); // カード表示
 			int[] tmp = new int[2];
-			for(int i=0; i<2; i++) {
-				tmp[i] = p.takeCard(cs);
-				cs.get(tmp[i]).flipUp();
-				cs.display(); // カード表示
-			}
+			tmp = p.takeCard(cs);
 			// 数字が同じだった場合
 			if(cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber())
 				for(int i=0; i<2; i++)

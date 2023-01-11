@@ -3,7 +3,7 @@ package kadai7;
 abstract class Player {
 	private String name;
 
-	abstract int takeCard(CardSet cs);
+	abstract int[] takeCard(CardSet cs);
 
 	Player(String name) {
 		this.name = name;
