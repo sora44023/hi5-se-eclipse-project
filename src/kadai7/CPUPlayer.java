@@ -15,6 +15,10 @@ public class CPUPlayer extends Player {
 		Random rnd = new Random();
 		int[] num = new int[2];
 		for (int i = 0; i < 2; i++) {
+			try {
+				Thread.sleep(800);
+			} catch (InterruptedException e) {
+			}
 			while (true) {
 				int rn = rnd.nextInt(12);
 				if (cs.get(rn).getState() == CardState.BACK) {
