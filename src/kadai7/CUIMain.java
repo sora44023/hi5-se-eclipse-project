@@ -8,7 +8,22 @@ public class CUIMain {
 		while (cs.getLeftCount() != 0) {
 			System.out.println("残り枚数: " + cs.getLeftCount());
 			cs.display(); // カード表示
-			cs.get..takeCard(cs);
+			int[] tmp = new int[2];
+			for(int i=0; i<2; i++) {
+				tmp[i] = p.takeCard(cs);
+				cs.get(tmp[i]).flipUp();
+				cs.display(); // カード表示
+			}
+			// 数字が同じだった場合
+			if(cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber())
+				for(int i=0; i<2; i++)
+					cs.get(tmp[i]).take();
+			// 数字が異なる場合
+			else
+				for(int i=0; i<2; i++)
+					cs.get(tmp[i]).flipDown();
+			System.out.println();
 		}
+		cs.display(); // カード表示
 	}
 }
