@@ -25,6 +25,10 @@ public class CardSet {
 		// index番目のカードを得る
 		return cards.get(index);
 	}
+	
+	public int getLength() {
+		return cards.size();
+	}
 
 	public void display() {
 		// 全カードを表示する

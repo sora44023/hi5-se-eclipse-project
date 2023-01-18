@@ -1,36 +1,45 @@
 package kadai7;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class CUIMain {
 	public static void main(String[] args) {
-		CardSet cs = new CardSet(3);
-		Player[] p = new Player[] { new CPUPlayer("CPU1"), new CPUPlayer("CPU2") };
-		int nowPlayer = 0;
+		CardSet cs = new CardSet(4);
+		List<Player> players = new ArrayList<>();
+		players.add(new CPUPlayer("CPU1"));
+		players.add(new CPUPlayer("CPU2"));
+		Iterator<Player> it = players.iterator();
+		Player nowPlayer = it.next();
+		int[] tmp = new int[2];
 		cs.shuffle();
 		while (cs.getLeftCount() != 0) {
 			System.out.println("残り枚数: " + cs.getLeftCount());
-			System.out.println(p[nowPlayer] + "'s turn.");
-			cs.display(); // カード表示
-			int[] tmp = new int[2];
-			tmp = p[nowPlayer].takeCard(cs);
-			for (int i = 0; i < 2; i++) {
-				if (cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber()) {
-					cs.get(tmp[i]).take();
-					p[nowPlayer].successCount();
-				} else {
-					cs.get(tmp[i]).flipDown();
-				}
+			System.out.println(nowPlayer + "'s turn.");
+			cs.display();
+			tmp = nowPlayer.takeCard(cs);
+			if (cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber()) {
+				cs.get(tmp[0]).take();
+				cs.get(tmp[1]).take();
+				nowPlayer.successCount();
+			} else {
+				cs.get(tmp[0]).flipDown();
+				cs.get(tmp[1]).flipDown();
+				if (!it.hasNext())
+					it = players.iterator();
+				nowPlayer = it.next();
 			}
 			System.out.println();
 			try {
-				Thread.sleep(800);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 			}
 		}
-
-		cs.display(); // カード表示
+		cs.display();
 		System.out.println("Done!");
-		for (int i = 0; i < 2; i++)
-			System.out.println(p[i] + ": " + p[i].getSc());
+		for (Player p : players)
+			System.out.println(p + ": " + p.getSc());
 
 	}
 }

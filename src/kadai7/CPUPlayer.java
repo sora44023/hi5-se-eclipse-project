@@ -16,11 +16,11 @@ public class CPUPlayer extends Player {
 		int[] num = new int[2];
 		for (int i = 0; i < 2; i++) {
 			try {
-				Thread.sleep(800);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 			}
 			while (true) {
-				int rn = rnd.nextInt(12);
+				int rn = rnd.nextInt(cs.getLength());
 				if (cs.get(rn).getState() == CardState.BACK) {
 					num[i] = rn;
 					break;
