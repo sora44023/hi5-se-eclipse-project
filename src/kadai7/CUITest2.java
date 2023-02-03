@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CUIMain2 {
+public class CUITest2 {
 	public static void main(String[] args) {
 		CardSet cs = new CardSet(4);
 		List<Player> players = new ArrayList<>();
