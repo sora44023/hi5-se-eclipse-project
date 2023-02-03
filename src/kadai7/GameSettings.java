@@ -2,7 +2,7 @@ package kadai7;
 
 public class GameSettings {
 	private int suitMax;
-	
+
 	public GameSettings() {
 		this.setSuitMax(4);
 	}

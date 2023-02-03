@@ -9,11 +9,11 @@ abstract class Player {
 	Player(String name) {
 		this.name = name;
 	}
-	
+
 	void successCount() {
 		sc = getSc() + 1;
 	}
-	
+
 	public int getSc() {
 		return sc;
 	}
