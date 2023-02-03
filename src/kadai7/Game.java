@@ -10,6 +10,10 @@ public class Game {
 	private Iterator<Player> it;
 	private Player nowPlayer;
 
+	public Game() {
+		
+	}
+	
 	public Game(Player p1, Player p2, GameSettings gs) {
 		cs = new CardSet(gs.getSuitMax());
 		players.add(p1);
