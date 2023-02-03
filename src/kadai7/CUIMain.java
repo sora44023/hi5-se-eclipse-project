@@ -11,13 +11,15 @@ public class CUIMain {
 		while (true) {
 			System.out.println("<<< Concentration >>>");
 			System.out.println("[1] 対戦モード (CPU vs You)");
-			System.out.println("[2] 対戦モード (StrongCPU vs You)");
+			System.out.println("[2] 対戦モード (MemCPU vs You)");
 			System.out.println("[3] 観戦モード (CPU1 vs CPU2)");
 			System.out.println("[8] ゲームの設定");
 			System.out.println("[9] Quit");
 			int n = inputNumber();
 			if (n == 1)
-				g = new Game(new CPUPlayer("CPU1"), new HumanPlayer("You"), gsm);
+				g = new Game(new CPUPlayer("CPU"), new HumanPlayer("You"), gsm);
+			if (n == 2)
+				g = new Game(new MemCPUPlayer("MemCPU"), new HumanPlayer("You"), gsm);
 			if (n == 3)
 				g = new Game(new CPUPlayer("CPU1"), new CPUPlayer("CPU2"), gsm);
 			if (n == 8) {
