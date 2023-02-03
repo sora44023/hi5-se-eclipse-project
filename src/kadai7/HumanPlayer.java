@@ -12,7 +12,7 @@ public class HumanPlayer extends Player {
 	}
 
 	@Override
-	int[] takeCard(CardSet cs) {
+	int[] takeCards(CardSet cs) {
 		int[] num = new int[2];
 		Scanner in = new Scanner(System.in);
 		for (int i = 0; i < 2; i++) {

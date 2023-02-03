@@ -7,20 +7,19 @@ import java.util.Scanner;
 public class CUIMain {
 	public static void main(String[] args) {
 		Game g = new Game();
-		GameSettings gs = new GameSettings();
-		GSModifier gsm = new GSModifier(gs);
+		GSModifier gsm = new GSModifier(new GameSettings());
 		while (true) {
-			System.out.println("<<< Stone Game >>>");
+			System.out.println("<<< Concentration >>>");
 			System.out.println("[1] 対戦モード (CPU vs You)");
-			System.out.println("[2] 対戦モード (ネットワーク対戦)");
+			System.out.println("[2] 対戦モード (StrongCPU vs You)");
 			System.out.println("[3] 観戦モード (CPU1 vs CPU2)");
 			System.out.println("[8] ゲームの設定");
 			System.out.println("[9] Quit");
 			int n = inputNumber();
 			if (n == 1)
-				g = new Game(new CPUPlayer("CPU1"), new HumanPlayer("You"), gs);
+				g = new Game(new CPUPlayer("CPU1"), new HumanPlayer("You"), gsm);
 			if (n == 3)
-				g = new Game(new CPUPlayer("CPU1"), new CPUPlayer("CPU2"), gs);
+				g = new Game(new CPUPlayer("CPU1"), new CPUPlayer("CPU2"), gsm);
 			if (n == 8) {
 				gsm.setupMode();
 				continue;

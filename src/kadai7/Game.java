@@ -14,8 +14,8 @@ public class Game {
 		
 	}
 	
-	public Game(Player p1, Player p2, GameSettings gs) {
-		cs = new CardSet(gs.getSuitMax());
+	public Game(Player p1, Player p2, GSModifier gsm) {
+		cs = new CardSet(gsm.getGS().getSuitMax());
 		players.add(p1);
 		players.add(p2);
 		it = players.iterator();
@@ -29,7 +29,7 @@ public class Game {
 			System.out.println("残り枚数: " + cs.getLeftCount());
 			System.out.println(nowPlayer + "'s turn.");
 			cs.display();
-			tmp = nowPlayer.takeCard(cs);
+			tmp = nowPlayer.takeCards(cs);
 			if (cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber()) {
 				cs.get(tmp[0]).take();
 				cs.get(tmp[1]).take();

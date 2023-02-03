@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class GSModifier {
 	private GameSettings gs;
-	Scanner in = new Scanner(System.in);
+	private Scanner in = new Scanner(System.in);
 
 	public GSModifier(GameSettings gs) {
 		this.gs = gs;
@@ -40,5 +40,9 @@ public class GSModifier {
 			System.out.println("[Error] パスワードが間違っています．設定モードを終了します．\n");
 			return false;
 		}
+	}
+	
+	public GameSettings getGS() {
+		return gs;
 	}
 }

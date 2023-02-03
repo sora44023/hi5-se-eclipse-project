@@ -4,7 +4,7 @@ abstract class Player {
 	private String name;
 	private int sc;
 
-	abstract int[] takeCard(CardSet cs);
+	abstract int[] takeCards(CardSet cs);
 
 	Player(String name) {
 		this.name = name;

@@ -18,7 +18,7 @@ public class CUITest {
 			System.out.println("残り枚数: " + cs.getLeftCount());
 			System.out.println(nowPlayer + "'s turn.");
 			cs.display();
-			tmp = nowPlayer.takeCard(cs);
+			tmp = nowPlayer.takeCards(cs);
 			if (cs.get(tmp[0]).getNumber() == cs.get(tmp[1]).getNumber()) {
 				cs.get(tmp[0]).take();
 				cs.get(tmp[1]).take();

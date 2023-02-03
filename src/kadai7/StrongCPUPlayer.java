@@ -4,9 +4,9 @@ import java.util.Random;
 
 import kadai7.Card.CardState;
 
-public class CPUPlayer extends Player {
+public class StrongCPUPlayer extends Player {
 
-	CPUPlayer(String name) {
+	StrongCPUPlayer(String name) {
 		super(name);
 	}
 
